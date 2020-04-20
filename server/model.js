@@ -2,7 +2,7 @@ var mongoose = require('mongoose');
 
 
 const fileSchema = new mongoose.Schema({
-    file:{type:Buffer}
+    meta_data:{}
 });
 
 mongoose.model("file",fileSchema);
