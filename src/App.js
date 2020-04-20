@@ -15,7 +15,7 @@ class App extends React.Component {
   onFormSubmit(e){
       e.preventDefault();
       const formData = new FormData();
-      formData.append('myImage',this.state.file);
+      formData.append('myfile',this.state.file);
       const config = {
           headers: {
               'content-type': 'multipart/form-data'
@@ -29,7 +29,7 @@ class App extends React.Component {
   }
 
   onChange(e) {
-      this.setState({file:e.target.files[0]});
+      this.setState({file:e.target.files});
   }
 
   render() {
