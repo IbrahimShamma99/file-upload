@@ -4,6 +4,7 @@ const multer = require("multer");
 const app = express();
 const router = express.Router();
 
+const PORT = 5000;
 const storage = multer.diskStorage({
    destination: "./public/",
    filename: function(req, file, cb){
@@ -21,6 +22,7 @@ const obj =(req,res) => {
    upload(req, res, () => {
       console.log("Request ---", req.body);
       console.log("Request file ---", req.file);//Here you get file.
+      
       res.send({message:"uploaded successfully"})
       /*Now do where ever you want to do*/
    });
@@ -34,6 +36,7 @@ app.get("/",(req,res)=>{
    return res.send("<p>hello!</p>");
 });
 
-app.listen(5000,()=>{
-    console.log("app listen")
-})
+
+app.listen(PORT,()=>{
+   console.log("\u{1F525}\u{1F680} app listen on port",PORT,"\u{1F525}\u{1F680}")
+});
